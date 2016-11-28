@@ -8,8 +8,8 @@
   "dependencies": {},
   "repository": "git@github.com:kaddopur/pokemon-types.git",
   "scripts": {
-    "prebuild": "rimraf dist",
-    "build": "node scripts/build"
+    "build": "node scripts/build",
+    "postinstall": "npm run build"
   },
   "devDependencies": {
     "rimraf": "^2.5.4"

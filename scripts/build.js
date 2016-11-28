@@ -1,4 +1,5 @@
 const fs = require('fs');
+const rimraf = require('rimraf');
 const csvFilePath = `${__dirname}/../data/types.csv`;
 const destFilePath = `${__dirname}/../dist/types.json`;
  
@@ -9,5 +10,7 @@ const types = result
     .slice(1)
     .map(line => line.trim().split(',').slice(1).map(Number));
 
-fs.mkdirSync(`${__dirname}/../dist/`);
-fs.writeFileSync(destFilePath, JSON.stringify(types, null, 4));
+rimraf(`${__dirname}/../dist/`, () => {
+    fs.mkdirSync(`${__dirname}/../dist/`);
+    fs.writeFileSync(destFilePath, JSON.stringify(types, null, 4));
+});
