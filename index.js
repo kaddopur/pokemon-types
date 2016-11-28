@@ -1,1 +1,3 @@
-console.log('pokemon-types');
+module.exports = {
+  damageFactor: require('../src/damageFactor'),
+};
