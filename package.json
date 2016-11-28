@@ -6,5 +6,12 @@
   "author": "Jason C. Huang",
   "license": "MIT",
   "dependencies": {},
-  "repository": "git@github.com:kaddopur/pokemon-types.git"
+  "repository": "git@github.com:kaddopur/pokemon-types.git",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "node scripts/build"
+  },
+  "devDependencies": {
+    "rimraf": "^2.5.4"
+  }
 }
