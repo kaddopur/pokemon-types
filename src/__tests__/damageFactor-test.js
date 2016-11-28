@@ -11,4 +11,10 @@ describe('#damageFactor', () => {
     expect(damageFactor('fight', 'flying')).toBe(0.5);
     expect(damageFactor('fight', 'ghost')).toBe(0);
   });
+
+  it('should return NaN for invalid type', () => {
+    expect(isNaN(damageFactor('foo', 'normal'))).toBe(true);
+    expect(isNaN(damageFactor('fight', 'bar'))).toBe(true);
+    expect(isNaN(damageFactor('foo', 'bar'))).toBe(true);
+  });
 });
