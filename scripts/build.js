@@ -8,7 +8,7 @@ const lines = result
     .toString()
     .split('\n');
 
-const types = lines
+const typeDamage = lines
     .slice(1)
     .map(line => line.trim().split(',').slice(1).map(Number));
 
@@ -20,6 +20,6 @@ const typeOrder = lines[0]
 rimraf(jsonDir, () => {
   fs.mkdirSync(jsonDir);
 
-  fs.writeFileSync(`${jsonDir}/types.json`, JSON.stringify(types, null, 4));
+  fs.writeFileSync(`${jsonDir}/typeDamage.json`, JSON.stringify(typeDamage, null, 4));
   fs.writeFileSync(`${jsonDir}/typeOrder.json`, JSON.stringify(typeOrder, null, 4));
 });
