@@ -18,8 +18,8 @@ const typeOrder = lines[0]
     .slice(1);
 
 rimraf(jsonDir, () => {
-    fs.mkdirSync(jsonDir);
+  fs.mkdirSync(jsonDir);
 
-    fs.writeFileSync(`${jsonDir}/types.json`, JSON.stringify(types, null, 4));
-    fs.writeFileSync(`${jsonDir}/typeOrder.json`, JSON.stringify(typeOrder, null, 4));
+  fs.writeFileSync(`${jsonDir}/types.json`, JSON.stringify(types, null, 4));
+  fs.writeFileSync(`${jsonDir}/typeOrder.json`, JSON.stringify(typeOrder, null, 4));
 });
